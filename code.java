@@ -17,35 +17,30 @@ public class PassWord
       Scanner scanner = new Scanner(System.in);
       String name = scanner.next();
       String input=name;  
-      while((s=br.readLine())!=null)   
-      {
+      while((s=br.readLine())!=null){
          words=s.split(" "); 
-          for (String word : words) 
-          {
-                 if (word.equals(input))  
-                 {
+         for (String word : words) {
+          	if (word.equals(input))  
+          	{
                 	 System.out.println("Enter password");
-                	 
                 	 String pass = scanner.next();
                 	 while((s=br.readLine())!=null){
                 		 words=s.split(" "); 
                          for (String word1 : words) 
                          {
                                 if (word1.equals(pass)){
-                		 System.out.println("access granted");
-                		 break;
+                                	System.out.println("access granted");
+                                	break;
+                                }
+                                else{
+                                	System.out.println("access denied"); 
+                                	break;
+                                }
                          }
-                         else{
-                		 System.out.println("access denied"); 
-                		 break;
+                         break;
                 	 }
-                                
-                	 }break;
-                	 
-                 }
-          }
-	}     
+            	}
+        }     
+      }
    }
-  }
-   
 }

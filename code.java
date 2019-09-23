@@ -1,8 +1,5 @@
 package passwordMatching;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class PassWord
@@ -28,14 +25,21 @@ public class PassWord
                 		 words=s.split(" "); 
                          for (String word1 : words) 
                          {
+                            for(i=1;i<6;i++){
                                 if (word1.equals(pass)){
                                 	System.out.println("access granted");
                                 	break;
                                 }
-                                else{
-                                	System.out.println("access denied"); 
-                                	break;
+                                else if(i<6){
+                                   System.out.println("try again ,you have"+(6-i)+"chances left");
+                                   String pass = scanner.next();                                	
                                 }
+                               else{
+                                    System.out.println("access denied"); 
+                                	break;
+                                  
+                               }
+                            }
                          }
                          break;
                 	 }
